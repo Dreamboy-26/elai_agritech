@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../App.css";
 const HomePage = () => {
-  const [count, setCount] = useState(0);
+    
+    let result = JSON.parse(localStorage.getItem("count")) ||0 ;
+    const [count, setCount] = useState(result);
 
   const navigate = useNavigate();
 
@@ -13,7 +15,6 @@ const HomePage = () => {
       localStorage.setItem("count", count)
     };
     
-    let result = JSON.parse(localStorage.getItem("count")) ||count ;
   const handleClick = () => {
     navigate("/nextPage");
   };
