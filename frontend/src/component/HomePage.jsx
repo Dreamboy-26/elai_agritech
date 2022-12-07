@@ -6,14 +6,14 @@ const HomePage = () => {
 
   const navigate = useNavigate();
 
-  let result = JSON.parse(localStorage.getItem("count")) ;
-
-  const handleCount = () => {
   
-    setCount(count + 1);
-    localStorage.setItem("count", count)
-  };
-
+  const handleCount = () => {
+      
+      setCount(count + 1);
+      localStorage.setItem("count", count)
+    };
+    
+    let result = JSON.parse(localStorage.getItem("count")) ||count ;
   const handleClick = () => {
     navigate("/nextPage");
   };
